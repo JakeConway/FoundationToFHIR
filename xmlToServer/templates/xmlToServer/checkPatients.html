@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="checkPatients">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Patients</title>
+    <script src="https://rawgit.com/JakeConway/FoundationToFHIRjs/master/angular.min.js" type="text/javascript"></script>
+    <script src="https://rawgit.com/JakeConway/FoundationToFHIRjs/master/jquery.min.js" type="text/javascript"></script>
+    <script src="https://rawgit.com/JakeConway/FoundationToFHIRjs/master/d3.min.js" type="text/javascript"></script>
+
+    {% load static from staticfiles %}
+    <script src="{% static "js/checkpatients.js" %}" type="text/javascript"></script>
+    <script type="text/javascript">
+        checkPatients.controller("checkPatientsCtrl", function ($scope) {
+            $scope.resourceJSON = null;
+            $scope.resourceArray = {{ resources | safe}};
+        });
+    </script>
+
+    <style>
+        pre {
+            outline: 1px solid #ccc;
+            padding: 5px;
+            margin: 5px;
+            white-space: pre-wrap; /* Since CSS 2.1 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+        }
+        .string {
+            color: #8888FF;
+        }
+        .number {
+            color: #8888FF;
+        }
+        .boolean {
+            color: #8888FF;
+        }
+        .null {
+            color: #8888FF;
+        }
+        .key {
+            color: #006699;
+        }
+    </style>
+</head>
+<body ng-controller="checkPatientsCtrl">
+<div check-patients>
+</div>
+<div patient-resources resourcejson="resourceJSON">
+</div>
+</body>
+</html>
