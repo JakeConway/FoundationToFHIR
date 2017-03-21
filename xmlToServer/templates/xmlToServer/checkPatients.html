@@ -44,9 +44,19 @@
     </style>
 </head>
 <body ng-controller="checkPatientsCtrl">
-<div check-patients>
-</div>
-<div patient-resources resourcejson="resourceJSON">
+<!-- Image and text -->
+<nav class="navbar navbar-inverse bg-inverse">
+    <a class="navbar-brand" href="">
+        <img src="http://niquola.github.io/hl7-russia-2014-fhir-slides/fhiri.png" width="30" height="30"
+             class="d-inline-block align-top" alt="">
+        FM-to-FHIR
+    </a>
+</nav>
+<div class="container">
+    <div check-patients>
+    </div>
+    <div patient-resources resourcejson="resourceJSON">
+    </div>
 </div>
 </body>
 </html>
