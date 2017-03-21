@@ -16,7 +16,11 @@ checkPatients.directive("checkPatients", function ($http) {
 
     function link(scope, element) {
         var el = element[0];
-        d3.select(el).append("p").style("margin", "0px").html("Select patient: <br>");
+        d3.select(el).append("p")
+            .attr("class", "card-text")
+            .style("color", "black")
+            .style("margin", "0px")
+            .html("Select patient: <br>");
         d3.select(el).selectAll("select").remove();
 
         var patientInfo = scope.$parent.resourceArray;
@@ -40,7 +44,11 @@ checkPatients.directive("checkPatients", function ($http) {
                 return d;
             });
 
-        d3.select(el).append("p").style("margin", "0px").html("Select resoruce: <br>");
+        d3.select(el).append("p")
+            .attr("class", "card-text")
+            .style("color", "black")
+            .style("margin", "0px")
+            .html("Select resoruce: <br>");
 
         var resourceSelect = d3.select(el).append("select")
             .attr("id", "resource-select")
